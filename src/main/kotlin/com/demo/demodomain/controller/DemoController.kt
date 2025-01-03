@@ -7,14 +7,11 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class DemoController(
-    private val demoService: DemoService
+    private val demoService: DemoService,
 ) {
-
-
     @GetMapping("/hello")
     fun hello(): ResponseEntity<String> {
         val result = demoService.getHello()
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(result)
     }
-
 }

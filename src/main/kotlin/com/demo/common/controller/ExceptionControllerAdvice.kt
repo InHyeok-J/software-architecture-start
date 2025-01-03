@@ -5,14 +5,11 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 
-
 @ControllerAdvice
 class ExceptionControllerAdvice {
 
-
     @ExceptionHandler(BusinessException::class)
-    fun handleBusinessException(ex: BusinessException): ResponseEntity<String> {
-        return ResponseEntity.status(400)
+    fun handleBusinessException(ex: BusinessException): ResponseEntity<String> =
+        ResponseEntity.status(400)
             .body(ex.message!!)
-    }
 }
